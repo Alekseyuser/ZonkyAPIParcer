@@ -10,17 +10,25 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
+import java.util.ListIterator;
+
 @Component
 public class Receiver {
 
     ObjectMapper objectMapper = new ObjectMapper();
+    ListIterator loanIerator;
+    List<Loan> listLoans;
+    Loan loanItem;
 
-    //@Scheduled(fixedRate = 30000)
-    @Scheduled(fixedRate = 20000)
+    @Scheduled(fixedRate = 30000)
     public void checkAPI() throws IOException {
-        List<Loan> listLoans = objectMapper.readValue(new URL("https://api.zonky.cz/loans/marketplace"),new TypeReference<List<Loan>>(){});
-        Loan l = listLoans.get(3); Loan l2 = listLoans.get(4);
-        System.out.println(l.getAmount() + " : " + l.getNickName());
-        System.out.println(l2.getAmount() + " : " + l2.getNickName());
+        listLoans = objectMapper.readValue(new URL("https://api.zonky.cz/loans/marketplace"),new TypeReference<List<Loan>>(){});
+        loanIerator = listLoans.listIterator();
+        while (loanIerator.hasNext()){
+            loanItem = (Loan) loanIerator.next();
+            if (!service.checkLoanItemIsExist(loanItem)) {
+                service.saveLoanItem(loanItem); //TODO
+            }
+        }
     }
 }
