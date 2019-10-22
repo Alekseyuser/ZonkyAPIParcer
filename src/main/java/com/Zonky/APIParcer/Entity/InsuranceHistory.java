@@ -9,12 +9,14 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import javax.persistence.*;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
         "policyPeriodFrom",
         "policyPeriodTo"
 })
+//@Entity
 public class InsuranceHistory implements Serializable
 {
 
@@ -22,8 +24,8 @@ public class InsuranceHistory implements Serializable
     private String policyPeriodFrom;
     @JsonProperty("policyPeriodTo")
     private String policyPeriodTo;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+//    @JsonIgnore
+//    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
     private final static long serialVersionUID = -3055902900561143456L;
 
     @JsonProperty("policyPeriodFrom")
@@ -46,14 +48,14 @@ public class InsuranceHistory implements Serializable
         this.policyPeriodTo = policyPeriodTo;
     }
 
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
+//    @JsonAnyGetter
+//    public Map<String, Object> getAdditionalProperties() {
+//        return this.additionalProperties;
+//    }
+//
+//    @JsonAnySetter
+//    public void setAdditionalProperty(String name, Object value) {
+//        this.additionalProperties.put(name, value);
+//    }
 
 }

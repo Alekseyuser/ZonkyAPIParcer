@@ -10,11 +10,15 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+import javax.persistence.*;
+
+
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
         "name",
         "url"
 })
+//@Entity
 public class Photo implements Serializable
 {
 
@@ -22,8 +26,8 @@ public class Photo implements Serializable
     private String name;
     @JsonProperty("url")
     private String url;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    //@JsonIgnore
+    //private Map<String, Object> additionalProperties = new HashMap<String, Object>();
     private final static long serialVersionUID = -3801294348981128687L;
 
     @JsonProperty("name")
@@ -46,14 +50,14 @@ public class Photo implements Serializable
         this.url = url;
     }
 
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
+//    @JsonAnyGetter
+//    public Map<String, Object> getAdditionalProperties() {
+//        return this.additionalProperties;
+//    }
+//
+//    @JsonAnySetter
+//    public void setAdditionalProperty(String name, Object value) {
+//        this.additionalProperties.put(name, value);
+//    }
 
 }

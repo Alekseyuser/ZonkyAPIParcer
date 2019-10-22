@@ -10,6 +10,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import javax.persistence.*;
+
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -53,9 +55,10 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
         "additionallyInsured",
         "annuityWithInsurance"
 })
+@Entity
 public class Loan implements Serializable
 {
-
+    @Id
     @JsonProperty("id")
     private Integer id;
     @JsonProperty("url")
@@ -134,8 +137,8 @@ public class Loan implements Serializable
     private Boolean additionallyInsured;
     @JsonProperty("annuityWithInsurance")
     private Double annuityWithInsurance;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    //@JsonIgnore
+    //private Map<String, Object> additionalProperties = new HashMap<String, Object>();
     private final static long serialVersionUID = 2734762069682323523L;
 
     @JsonProperty("id")
@@ -528,14 +531,14 @@ public class Loan implements Serializable
         this.annuityWithInsurance = annuityWithInsurance;
     }
 
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
+//    @JsonAnyGetter
+//    public Map<String, Object> getAdditionalProperties() {
+//        return this.additionalProperties;
+//    }
+//
+//    @JsonAnySetter
+//    public void setAdditionalProperty(String name, Object value) {
+//        this.additionalProperties.put(name, value);
+//    }
 
 }

@@ -3,9 +3,11 @@ package com.Zonky.APIParcer.Service;
 import com.Zonky.APIParcer.Entity.Loan;
 import com.Zonky.APIParcer.Repository.LoanRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Service
 public class LoanServiceImp implements LoanService {
 
     private LoanRepository loanRepository;
@@ -17,8 +19,7 @@ public class LoanServiceImp implements LoanService {
 
     @Override
     public boolean checkLoanItemIsExist(Loan loan) {
-        //loanRepository.exists() //https://www.baeldung.com/spring-data-exists-query
-        return false;
+        return loanRepository.existsById(loan.getId());
     }
 
     @Override
