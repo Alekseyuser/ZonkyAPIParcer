@@ -8,4 +8,5 @@ import org.springframework.stereotype.Service;
 public interface LoanService {
     public boolean checkLoanItemIsExist(LoanDTO loanDTO);
     public Loan saveLoanItem(Loan loan);
+    public Loan dtoToEntity(LoanDTO loanDTO);
 }

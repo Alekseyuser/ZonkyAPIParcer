@@ -32,7 +32,8 @@ public class Receiver {
         while (loanIerator.hasNext()){
             loanDTOItem = (LoanDTO) loanIerator.next();
             if (!loanService.checkLoanItemIsExist(loanDTOItem)) {
-                loanService.saveLoanItem(loanDTOItem);
+                loanService.dtoToEntity(loanDTOItem);
+                //loanService.saveLoanItem(loanDTOItem);
             }
             else {
                 break;

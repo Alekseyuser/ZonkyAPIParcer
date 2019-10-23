@@ -8,12 +8,11 @@ import java.io.Serializable;
 public class Photo  implements Serializable {
     @Id
     private Integer id;
+    private String name;
+    private String url;
 
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
-
-    private String name;
-    private String url;
 
     public String getName() {
         return name;

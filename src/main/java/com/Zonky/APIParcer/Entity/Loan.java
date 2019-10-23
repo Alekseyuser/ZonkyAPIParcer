@@ -28,9 +28,9 @@ public class Loan implements Serializable {
     private Boolean covered;
     private Double reservedAmount;
     private Double zonkyPlusAmount;
-    private String datePublished;
+    private String datePublished; //date
     private Boolean published;
-    private String deadline;
+    private String deadline; //date
     private String myOtherInvestments;
     private String borrowerRelatedInvestmentInfo;
     private Integer investmentsCount;
@@ -41,7 +41,7 @@ public class Loan implements Serializable {
     private Integer activeLoansCount;
     private Boolean insuranceActive;
     private Integer insuranceHistoryId;
-    private Boolean multicash;
+    private String countryOfOrigin;
     private String currency;
     private Boolean insuredInFuture;
     private Boolean additionallyInsured;
@@ -278,18 +278,18 @@ public class Loan implements Serializable {
         this.insuranceActive = insuranceActive;
     }
 
-    public Integer getInsuranceHistoryDTO() {
+    public Integer getInsuranceHistoryId() {
         return insuranceHistoryId;
     }
-    public void setInsuranceHistoryDTO(Integer insuranceHistoryId) {
+    public void setInsuranceHistoryId(Integer insuranceHistoryId) {
         this.insuranceHistoryId = insuranceHistoryId;
     }
 
-    public Boolean getMulticash() {
-        return multicash;
+    public String getCountryOfOrigin() {
+        return countryOfOrigin;
     }
-    public void setMulticash(Boolean multicash) {
-        this.multicash = multicash;
+    public void setCountryOfOrigin(String countryOfOrigin) {
+        this.countryOfOrigin = countryOfOrigin;
     }
 
     public String getCurrency() {

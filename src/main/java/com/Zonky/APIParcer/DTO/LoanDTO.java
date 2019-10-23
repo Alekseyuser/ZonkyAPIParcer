@@ -67,7 +67,7 @@ private Integer id;
     private String story;
     @JsonProperty("purpose")
     private String purpose;
-    @JsonProperty("photoDTOS")
+    @JsonProperty("photos")
     private List<PhotoDTO> photoDTOS = null;
     @JsonProperty("userId")
     private Integer userId;
@@ -123,10 +123,10 @@ private Integer id;
     private Integer activeLoansCount;
     @JsonProperty("insuranceActive")
     private Boolean insuranceActive;
-    @JsonProperty("insuranceHistoryDTO")
+    @JsonProperty("insuranceHistory")
     private List<InsuranceHistoryDTO> insuranceHistoryDTO = null;
-    @JsonProperty("multicash")
-    private Boolean multicash;
+    @JsonProperty("countryOfOrigin")
+    private String countryOfOrigin;
     @JsonProperty("currency")
     private String currency;
     @JsonProperty("insuredInFuture")
@@ -189,12 +189,12 @@ private Integer id;
         this.purpose = purpose;
     }
 
-    @JsonProperty("photoDTOS")
+    @JsonProperty("photos")
     public List<PhotoDTO> getPhotoDTOS() {
         return photoDTOS;
     }
 
-    @JsonProperty("photoDTOS")
+    @JsonProperty("photos")
     public void setPhotoDTOS(List<PhotoDTO> photoDTOS) {
         this.photoDTOS = photoDTOS;
     }
@@ -469,24 +469,24 @@ private Integer id;
         this.insuranceActive = insuranceActive;
     }
 
-    @JsonProperty("insuranceHistoryDTO")
+    @JsonProperty("insuranceHistory")
     public List<InsuranceHistoryDTO> getInsuranceHistoryDTO() {
         return insuranceHistoryDTO;
     }
 
-    @JsonProperty("insuranceHistoryDTO")
+    @JsonProperty("insuranceHistory")
     public void setInsuranceHistoryDTO(List<InsuranceHistoryDTO> insuranceHistoryDTO) {
         this.insuranceHistoryDTO = insuranceHistoryDTO;
     }
 
-    @JsonProperty("multicash")
-    public Boolean getMulticash() {
-        return multicash;
+    @JsonProperty("countryOfOrigin")
+    public String getCountryOfOrigin() {
+        return countryOfOrigin;
     }
 
-    @JsonProperty("multicash")
-    public void setMulticash(Boolean multicash) {
-        this.multicash = multicash;
+    @JsonProperty("countryOfOrigin")
+    public void setCountryOfOrigin(String countryOfOrigin) {
+        this.countryOfOrigin = countryOfOrigin;
     }
 
     @JsonProperty("currency")
