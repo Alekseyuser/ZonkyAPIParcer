@@ -14,6 +14,7 @@ public class Loan implements Serializable {
     private String purpose;
     private Integer photoId;
     private Integer userId;
+    private Long borrowerNo;
     private String nickName;
     private Integer termInMonths;
     private Double interestRate;
@@ -85,7 +86,7 @@ public class Loan implements Serializable {
     public Integer getPhotoId() {
         return photoId;
     }
-    public void setPhotoDTOS(Integer photoId) {
+    public void setPhotoId(Integer photoId) {
         this.photoId = photoId;
     }
 
@@ -316,7 +317,11 @@ public class Loan implements Serializable {
     public Double getAnnuityWithInsurance() {
         return annuityWithInsurance;
     }
+
     public void setAnnuityWithInsurance(Double annuityWithInsurance) {
         this.annuityWithInsurance = annuityWithInsurance;
     }
+
+    public Long getBorrowerNo() { return borrowerNo; }
+    public void setBorrowerNo(Long borrowerNo) { this.borrowerNo = borrowerNo; }
 }

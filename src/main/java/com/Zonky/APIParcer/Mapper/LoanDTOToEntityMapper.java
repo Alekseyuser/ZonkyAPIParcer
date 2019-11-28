@@ -13,7 +13,10 @@ public class LoanDTOToEntityMapper extends PropertyMap<LoanDTO, Loan> {
     private Loan loanEntity;
 
     public Loan loadDTOToEntity(LoanDTO loanDTO){
-        return loanEntity = modelMapper.map(loanDTO,Loan.class);
+
+        loanEntity = modelMapper.map(loanDTO,Loan.class);
+        loanEntity.setPhotoId(loanDTO.getp);
+        return loanEntity;
 
 
     }

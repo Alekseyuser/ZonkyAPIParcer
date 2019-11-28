@@ -20,6 +20,7 @@ import javax.persistence.*;
         "purpose",
         "photoDTOS",
         "userId",
+        "borrowerNo",
         "nickName",
         "termInMonths",
         "interestRate",
@@ -71,6 +72,8 @@ private Integer id;
     private List<PhotoDTO> photoDTOS = null;
     @JsonProperty("userId")
     private Integer userId;
+    @JsonProperty("borrowerNo")
+    private Long borrowerNo;
     @JsonProperty("nickName")
     private String nickName;
     @JsonProperty("termInMonths")
@@ -202,6 +205,16 @@ private Integer id;
     @JsonProperty("userId")
     public Integer getUserId() {
         return userId;
+    }
+
+    @JsonProperty("borrowerNo")
+    public void setBorrowerNo(Long borrowerNo) {
+        this.borrowerNo = borrowerNo;
+    }
+
+    @JsonProperty("borrowerNo")
+    public Long getBorrowerNo() {
+        return borrowerNo;
     }
 
     @JsonProperty("userId")

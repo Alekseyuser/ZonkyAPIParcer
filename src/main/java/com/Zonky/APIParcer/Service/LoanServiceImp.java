@@ -35,6 +35,7 @@ public class LoanServiceImp implements LoanService {
         loanEntity = loanDTOToEntityMapper.loadDTOToEntity(loanDTO);
         System.out.println(loanEntity.getId());
         System.out.println(loanEntity.getPhotoId());
+
         return loanEntity;
     }
 }
